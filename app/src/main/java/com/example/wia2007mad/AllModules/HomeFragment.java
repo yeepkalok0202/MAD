@@ -23,7 +23,7 @@ import com.smarteist.autoimageslider.SliderView;
 
 public class HomeFragment extends Fragment {
 
-    //hello bye
+    //hello bye bye
     private FragmentHomeBinding binding;
     String url1="https://www.unwomen.org/sites/default/files/Headquarters/Images/Sections/Multimedia/2017/infographic-spotlight-sdg5-data-card-violence-front.png?h=624&la=en&w=960&fbclid=IwAR0i65TNRFmgd22ortO11fWRK0nJENjZcTT-Rb9_Z0QIvIWL1annO3TX8YM",
     url2="https://pcw.gov.ph/assets/files/2020/05/Picture1.png?x46289&fbclid=IwAR1t9znvgFGsE0pH3eq9pcYALp8kEfF0iQiskEG9jkN25TZ_Yz-oONh5-yg",
