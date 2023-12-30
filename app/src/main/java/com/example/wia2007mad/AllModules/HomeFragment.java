@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.Engine;
 import com.example.wia2007mad.databinding.FragmentHomeBinding;
 import com.example.wia2007mad.databinding.MainHomePageBinding;
+import com.example.wia2007mad.socialmarket.Home;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -106,6 +107,18 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        binding.socialmarketbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), Home.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
         return binding.getRoot();
     }
 }
