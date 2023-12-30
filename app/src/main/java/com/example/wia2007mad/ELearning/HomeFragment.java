@@ -23,6 +23,7 @@ import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
+    //testing
 
     private FragmentHomeBinding binding;
     String url1="https://www.unwomen.org/sites/default/files/Headquarters/Images/Sections/Multimedia/2017/infographic-spotlight-sdg5-data-card-violence-front.png?h=624&la=en&w=960&fbclid=IwAR0i65TNRFmgd22ortO11fWRK0nJENjZcTT-Rb9_Z0QIvIWL1annO3TX8YM",
