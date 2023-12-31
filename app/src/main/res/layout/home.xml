@@ -80,6 +80,7 @@
                     android:orientation="horizontal">
                     
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/successcardview1"
                         android:layout_width="260dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_vertical"
@@ -98,9 +99,7 @@
                             <ImageView
                                 android:id="@+id/successimage1"
                                 android:layout_width="120dp"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/kunkun" />
+                                android:layout_height="match_parent" />
 
 
                             <LinearLayout
@@ -115,27 +114,23 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/interblack"
-                                    android:hint="Author1"
+                                    android:text="Mary Barra"
+                                    android:layout_marginTop="6dp"
                                     android:paddingTop="5dp"
                                     android:paddingBottom="2dp"
-                                    android:textSize="11dp" />
+                                    android:textSize="16dp" />
 
                                 <TextView
                                     android:id="@+id/successtitle1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/intersemibold"
-                                    android:hint="Title1"
-                                    android:paddingEnd="40dp"
-                                    android:textSize="12dp" />
-
-                                <TextView
-                                    android:id="@+id/successcontent1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/lorem_ipsum"
+                                    android:text="The first female CEO of General Motors (GM) in the historically male-dominated auto industry"
+                                    android:layout_marginTop="10dp"
                                     android:paddingEnd="5dp"
-                                    android:textSize="9dp" />
+                                    android:textSize="11dp" />
+
+
 
                             </LinearLayout>
 
@@ -144,6 +139,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/successcardview2"
                         android:layout_width="260dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_vertical"
@@ -162,9 +158,7 @@
                             <ImageView
                                 android:id="@+id/successimage2"
                                 android:layout_width="120dp"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/kunkun" />
+                                android:layout_height="match_parent"/>
 
 
                             <LinearLayout
@@ -179,27 +173,21 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/interblack"
-                                    android:hint="Author1"
+                                    android:text="Huda Kattan"
+                                    android:layout_marginTop="6dp"
                                     android:paddingTop="5dp"
                                     android:paddingBottom="2dp"
-                                    android:textSize="11dp" />
+                                    android:textSize="16dp" />
 
                                 <TextView
                                     android:id="@+id/successtitle2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/intersemibold"
-                                    android:hint="Title1"
-                                    android:paddingEnd="40dp"
-                                    android:textSize="12dp" />
-
-                                <TextView
-                                    android:id="@+id/successcontent2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/lorem_ipsum"
+                                    android:text="From Jobless to Beauty Boss"
+                                    android:layout_marginTop="10dp"
                                     android:paddingEnd="5dp"
-                                    android:textSize="9dp" />
+                                    android:textSize="12dp" />
 
                             </LinearLayout>
 
@@ -208,6 +196,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/successcardview3"
                         android:layout_width="260dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_vertical"
@@ -227,8 +216,7 @@
                                 android:id="@+id/successimage3"
                                 android:layout_width="120dp"
                                 android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/kunkun" />
+                                android:scaleType="centerCrop" />
 
 
                             <LinearLayout
@@ -243,27 +231,22 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/interblack"
-                                    android:hint="Author1"
+                                    android:text="Eric"
+                                    android:layout_marginTop="6dp"
                                     android:paddingTop="5dp"
                                     android:paddingBottom="2dp"
-                                    android:textSize="11dp" />
+                                    android:textSize="16dp" />
 
                                 <TextView
                                     android:id="@+id/successtitle3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/intersemibold"
-                                    android:hint="Title1"
-                                    android:paddingEnd="40dp"
+                                    android:text="Starting and maintaining a business through a circle of support"
+                                    android:layout_marginTop="10dp"
+                                    android:paddingEnd="5dp"
                                     android:textSize="12dp" />
 
-                                <TextView
-                                    android:id="@+id/successcontent3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/lorem_ipsum"
-                                    android:paddingEnd="5dp"
-                                    android:textSize="9dp" />
 
                             </LinearLayout>
 

@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+import com.example.wia2007mad.AllModules.webViewPage;
 import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.HomeBinding;
 
@@ -26,6 +28,51 @@ public class Home extends AppCompatActivity {
 
         binding= HomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        //set home success stories image
+        String  successstory1= "https://www.carscoops.com/wp-content/uploads/2021/09/Mary-Barra-2.jpg",
+                successstory2="https://assets-global.website-files.com/636b444a0271e517e1e38c84/64c66c85d117162fb3c56bd7_NLA.IO%20Blog%20Banner%201280%20x%20720%20(6).webp",
+                successstory3="https://www.thinkwork.org/sites/realworkstories.org/files/images/stories/story_pics/eric_pizza_express.jpg";
+        Glide.with(this)
+                .load(successstory1)
+                .into(binding.successimage1);
+        Glide.with(this)
+                .load(successstory2)
+                .into(binding.successimage2);
+        Glide.with(this)
+                .load(successstory3)
+                .into(binding.successimage3);
+
+        //set success story
+
+        binding.successcardview1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, webViewPage.class);
+                String urlToLoad = "https://www.automotivehalloffame.org/honoree/mary-barra/#:~:text=As%20the%20first%20female%20CEO,Hall%20of%20Fame%20in%202023.";
+                intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
+        binding.successcardview2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, webViewPage.class);
+                String urlToLoad = "https://www.nextlevelacademy.io/blog-posts/from-jobless-to-beauty-boss-the-huda-kattan-success-story";
+                intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
+
+        binding.successcardview3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, webViewPage.class);
+                String urlToLoad = "https://www.thinkwork.org/eric-starting-and-maintaining-business-through-circle-support";
+                intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
 
 
         //button from social market home page to app home page
