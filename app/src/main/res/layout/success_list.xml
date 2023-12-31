@@ -26,6 +26,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="13dp"
             android:layout_marginBottom="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
             android:layout_below="@id/successblogimage"
             android:text="Text"
             android:fontFamily="@font/outfitregular"/>

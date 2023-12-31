@@ -2,12 +2,18 @@ package com.example.wia2007mad.socialmarket;
 
 public class SuccessData {
 
-    private String successtext;
-    private Integer imageUrl;
+    public String successtext;
+    public String imageUrl;
 
-    public SuccessData(String successtext, Integer imageUrl) {
+    public String url;
+
+    public SuccessData() {
+    }
+
+    public SuccessData(String successtext, String imageUrl,String url) {
         this.successtext = successtext;
         this.imageUrl = imageUrl;
+        this.url = url;
     }
 
     public String getSuccesstext() {
@@ -18,12 +24,20 @@ public class SuccessData {
         this.successtext = successtext;
     }
 
-    public Integer getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(Integer imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override
@@ -31,6 +45,7 @@ public class SuccessData {
         return "SuccessData{" +
                 "successtext='" + successtext + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", url='" + url + '\'' +
                 '}';
     }
 }
