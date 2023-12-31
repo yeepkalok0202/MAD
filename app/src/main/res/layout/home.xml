@@ -16,6 +16,17 @@
         android:textColor="@color/black"
         android:textSize="37sp"/>
 
+    <ImageButton
+        android:id="@+id/socialmarkethomebutton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="3dp"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/homeicon"
+        android:layout_toRightOf="@id/TVIntro"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

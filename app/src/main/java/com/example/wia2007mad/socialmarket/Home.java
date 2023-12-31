@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wia2007mad.R;
+import com.example.wia2007mad.databinding.HomeBinding;
 
 public class Home extends AppCompatActivity {
 
@@ -16,10 +17,24 @@ public class Home extends AppCompatActivity {
 
     Button businessreadmore;
 
+    private HomeBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        binding= HomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
+        //button from social market home page to app home page
+        binding.socialmarkethomebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         //arrow from home page to success
         successarrow = findViewById(R.id.sucessarrow);

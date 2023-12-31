@@ -108,6 +108,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //go to social market
         binding.socialmarketbuttongogogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

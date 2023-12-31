@@ -66,10 +66,24 @@
             android:parentActivityName=".AllModules.Login">
         </activity>
 
-        <activity android:name=".AllModules.MainPageElearning"
+        <activity android:name=".socialmarket.Home"
             android:parentActivityName=".AllModules.MainHomePage">
-
         </activity>
+
+        <activity android:name=".socialmarket.Business"
+            android:parentActivityName=".socialmarket.Home">
+        </activity>
+
+        <activity android:name=".socialmarket.Marketing"
+            android:parentActivityName=".socialmarket.Home">
+        </activity>
+
+        <activity android:name=".socialmarket.Success"
+            android:parentActivityName=".socialmarket.Home">
+        </activity>
+
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
