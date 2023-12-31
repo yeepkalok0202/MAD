@@ -215,8 +215,7 @@
                             <ImageView
                                 android:id="@+id/successimage3"
                                 android:layout_width="120dp"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop" />
+                                android:layout_height="match_parent" />
 
 
                             <LinearLayout
@@ -231,7 +230,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/interblack"
-                                    android:text="Eric"
+                                    android:text="Evgeniya Malina"
                                     android:layout_marginTop="6dp"
                                     android:paddingTop="5dp"
                                     android:paddingBottom="2dp"
@@ -242,7 +241,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/intersemibold"
-                                    android:text="Starting and maintaining a business through a circle of support"
+                                    android:text="How she built a career in a man’s world"
                                     android:layout_marginTop="10dp"
                                     android:paddingEnd="5dp"
                                     android:textSize="12dp" />
@@ -304,6 +303,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/marketingcardview1"
                         android:layout_width="260dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_vertical"
@@ -322,9 +322,7 @@
                             <ImageView
                                 android:id="@+id/marketimage1"
                                 android:layout_width="120dp"
-                                android:layout_height="match_parent"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/kunkun" />
+                                android:layout_height="match_parent" />
 
 
                             <LinearLayout
@@ -339,7 +337,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/interblack"
-                                    android:hint="Author1"
+                                    android:text="Simon Kingsnorth "
                                     android:paddingTop="5dp"
                                     android:paddingBottom="2dp"
                                     android:textSize="11dp" />
@@ -349,17 +347,18 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/intersemibold"
-                                    android:hint="Title1"
-                                    android:paddingEnd="40dp"
+                                    android:text="Digital Marketing Strategy"
+                                    android:paddingEnd="4dp"
                                     android:textSize="12dp" />
 
                                 <TextView
                                     android:id="@+id/marketcontent1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:hint="@string/lorem_ipsum"
+                                    android:text="An Integrated approach to online marketing"
                                     android:paddingEnd="5dp"
-                                    android:textSize="9dp" />
+                                    android:layout_marginBottom="7dp"
+                                    android:textSize="11dp" />
 
                             </LinearLayout>
 
@@ -368,6 +367,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/marketingcardview2"
                         android:layout_width="260dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_vertical"
@@ -432,6 +432,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/marketingcardview3"
                         android:layout_width="260dp"
                         android:layout_height="140dp"
                         android:layout_gravity="center_vertical"

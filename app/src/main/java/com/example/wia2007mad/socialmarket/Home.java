@@ -32,7 +32,7 @@ public class Home extends AppCompatActivity {
         //set home success stories image
         String  successstory1= "https://www.carscoops.com/wp-content/uploads/2021/09/Mary-Barra-2.jpg",
                 successstory2="https://assets-global.website-files.com/636b444a0271e517e1e38c84/64c66c85d117162fb3c56bd7_NLA.IO%20Blog%20Banner%201280%20x%20720%20(6).webp",
-                successstory3="https://www.thinkwork.org/sites/realworkstories.org/files/images/stories/story_pics/eric_pizza_express.jpg";
+                successstory3="https://sugermint.com/wp-content/uploads/2022/08/Evgeniya-Malina-Food-Rocket.jpg";
         Glide.with(this)
                 .load(successstory1)
                 .into(binding.successimage1);
@@ -65,6 +65,51 @@ public class Home extends AppCompatActivity {
         });
 
         binding.successcardview3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, webViewPage.class);
+                String urlToLoad = "https://sugermint.com/evgeniya-malina/";
+                intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
+
+        //set home marketing resource image
+        String  marketingresource1= "https://i0.wp.com/simonkingsnorth.com/wp-content/uploads/2019/04/80d59-img_5837.jpg?fit=1200%2C628&ssl=1",
+                marketingresource2="https://assets-global.website-files.com/636b444a0271e517e1e38c84/64c66c85d117162fb3c56bd7_NLA.IO%20Blog%20Banner%201280%20x%20720%20(6).webp",
+                marketingresource3="https://www.thinkwork.org/sites/realworkstories.org/files/images/stories/story_pics/eric_pizza_express.jpg";
+        Glide.with(this)
+                .load(marketingresource1)
+                .into(binding.marketimage1);
+        Glide.with(this)
+                .load(marketingresource2)
+                .into(binding.marketimage2);
+        Glide.with(this)
+                .load(marketingresource3)
+                .into(binding.marketimage3);
+
+        //set marketing resource
+
+        binding.marketingcardview1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, webViewPage.class);
+                String urlToLoad = "https://breadcrumbs.io/blog/marketing-resources/#8-copyblogger";
+                intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
+        binding.marketingcardview2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, webViewPage.class);
+                String urlToLoad = "https://www.nextlevelacademy.io/blog-posts/from-jobless-to-beauty-boss-the-huda-kattan-success-story";
+                intent.putExtra("url", urlToLoad);
+                startActivity(intent);
+            }
+        });
+
+        binding.marketingcardview3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, webViewPage.class);

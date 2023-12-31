@@ -40,6 +40,7 @@ public class SuccessAdapter extends RecyclerView.Adapter<SuccessAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        //set text
         holder.successTxt.setText(successStories.get(position).getSuccesstext());
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override

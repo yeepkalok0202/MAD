@@ -2,17 +2,22 @@ package com.example.wia2007mad.socialmarket;
 
 public class MarketData {
 
-    private String name;
-    private String course;
-    private String marketDesc;
-    private Integer imageUrl;
-    //private String imageUrl;
+    public String name;
+    public String course;
+    public String marketDesc;
+    //private Integer imageUrl;
+    public String imageUrl;
 
-    public MarketData(String name, String course, String marketDesc, Integer imageUrl) {
+    public String url;
+
+    public MarketData() {
+    }
+    public MarketData(String name, String course, String marketDesc, String imageUrl, String url) {
         this.name = name;
         this.course = course;
         this.marketDesc = marketDesc;
         this.imageUrl = imageUrl;
+        this.url = url;
     }
 
     public String getName() {
@@ -39,11 +44,19 @@ public class MarketData {
         this.marketDesc = marketDesc;
     }
 
-    public Integer getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(Integer imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
