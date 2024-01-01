@@ -36,6 +36,20 @@ public class HealthHome extends AppCompatActivity {
             }
         });
 
+        BtnEducation.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HealthHome.this, HealthEducation.class));
+            }
+        });
+
+        BtnEducation2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HealthHome.this, HealthEducation.class));
+            }
+        });
+
         binding.articlecardview1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
