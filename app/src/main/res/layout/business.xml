@@ -51,5 +51,6 @@
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/businesssearchview"/>
+        android:layout_below="@+id/businesssearchview"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 </RelativeLayout>

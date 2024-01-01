@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.SearchView.OnQueryTextListener;
@@ -144,6 +145,8 @@ public class Marketing extends AppCompatActivity {
                             MarketAdapter marketAdapter = new MarketAdapter(marketresourcelist, new MarketingListener() {
                                 @Override
                                 public void onItemClicked(MarketData marketData) {
+
+                                    Toast.makeText(getApplicationContext(),  " Selected", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), webViewPage.class);
                                     intent.putExtra("url", marketData.url);
                                     startActivity(intent);

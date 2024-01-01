@@ -1,13 +1,13 @@
 package com.example.wia2007mad.socialmarket;
 
-public class BusinessData {
+import java.io.Serializable;
 
-    private String name;
-    private String course;
-    private String businessDesc;
-    private Integer imageUrl;
-    //private String imageUrl;
+public class BusinessData implements Serializable {
 
+    public String name, course, businessDesc, imageUrl, url;
+
+
+    /*
     public BusinessData(String name, String course, String businessDesc, Integer imageUrl) {
         this.name = name;
         this.course = course;
@@ -46,4 +46,6 @@ public class BusinessData {
     public void setImageUrl(Integer imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+     */
 }

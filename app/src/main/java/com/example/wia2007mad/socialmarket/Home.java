@@ -14,7 +14,6 @@ import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.HomeBinding;
 
 public class Home extends AppCompatActivity {
-    //hello
     ImageButton successarrow, marketarrow;
 
     Button businessreadmore;
@@ -76,8 +75,8 @@ public class Home extends AppCompatActivity {
 
         //set home marketing resource image
         String  marketingresource1= "https://i0.wp.com/simonkingsnorth.com/wp-content/uploads/2019/04/80d59-img_5837.jpg?fit=1200%2C628&ssl=1",
-                marketingresource2="https://assets-global.website-files.com/636b444a0271e517e1e38c84/64c66c85d117162fb3c56bd7_NLA.IO%20Blog%20Banner%201280%20x%20720%20(6).webp",
-                marketingresource3="https://www.thinkwork.org/sites/realworkstories.org/files/images/stories/story_pics/eric_pizza_express.jpg";
+                marketingresource2="https://buybooks.ng/wp-content/uploads/2021/02/9781591847380-1.jpg",
+                marketingresource3="https://i0.wp.com/images-na.ssl-images-amazon.com/images/I/51UYILvuvtL._SX352_BO1,204,203,200_.jpg?resize=232%2C327&ssl=1";
         Glide.with(this)
                 .load(marketingresource1)
                 .into(binding.marketimage1);
@@ -94,7 +93,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, webViewPage.class);
-                String urlToLoad = "https://breadcrumbs.io/blog/marketing-resources/#8-copyblogger";
+                String urlToLoad = "https://simonkingsnorth.com/digital-marketing-books/";
                 intent.putExtra("url", urlToLoad);
                 startActivity(intent);
             }
@@ -103,7 +102,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, webViewPage.class);
-                String urlToLoad = "https://www.nextlevelacademy.io/blog-posts/from-jobless-to-beauty-boss-the-huda-kattan-success-story";
+                String urlToLoad = "https://sendpulse.com/support/glossary/growth-hacking";
                 intent.putExtra("url", urlToLoad);
                 startActivity(intent);
             }
@@ -113,7 +112,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Home.this, webViewPage.class);
-                String urlToLoad = "https://www.thinkwork.org/eric-starting-and-maintaining-business-through-circle-support";
+                String urlToLoad = "https://seths.blog/tim/";
                 intent.putExtra("url", urlToLoad);
                 startActivity(intent);
             }
