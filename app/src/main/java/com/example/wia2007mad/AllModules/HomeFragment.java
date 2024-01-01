@@ -106,6 +106,14 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        binding.healthbuttongogogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HealthHome.class);
+                startActivity(intent);
+            }
+        });
         return binding.getRoot();
     }
 

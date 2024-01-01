@@ -6,8 +6,8 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -18,58 +18,52 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WIA2007MAD"
-        tools:targetApi="31"
-        android:requestLegacyExternalStorage="true">
-
+        tools:targetApi="31">
+        <activity
+            android:name=".AllModules.HealthHome"
+            android:exported="false" />
         <activity
             android:name=".AllModules.SplashScreen"
-            android:exported="true"
-            >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AllModules.Login"></activity>
-        <activity android:name=".AllModules.MainHomePage">
-        </activity>
+        <activity android:name=".AllModules.Login" />
+        <activity android:name=".AllModules.MainHomePage"></activity>
+        <activity
+            android:name=".AllModules.MainPageElearning"
+            android:parentActivityName=".AllModules.MainHomePage"></activity>
+        <activity
+            android:name=".AllModules.ScholarshipGrant"
+            android:parentActivityName=".AllModules.MainPageElearning"></activity>
+        <activity
+            android:name=".AllModules.Workshop"
+            android:parentActivityName=".AllModules.MainPageElearning"></activity>
+        <activity
+            android:name=".AllModules.ResourceSharingHub"
+            android:parentActivityName=".AllModules.MainPageElearning"></activity>
+        <activity
+            android:name=".AllModules.ScholarshipDetails"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".AllModules.ScholarshipGrant"></activity>
+        <activity android:name=".AllModules.webViewPage"></activity>
+        <activity
+            android:name=".AllModules.ResetPassword"
+            android:parentActivityName=".AllModules.Login"></activity>
+        <activity
+            android:name=".AllModules.Register"
+            android:parentActivityName=".AllModules.Login"></activity>
+        <activity
+            android:name=".AllModules.MainPageElearning"
+            android:parentActivityName=".AllModules.MainHomePage"></activity>
 
-        <activity android:name=".AllModules.MainPageElearning"
-            android:parentActivityName=".AllModules.MainHomePage">
-
-        </activity>
-        <activity android:name=".AllModules.ScholarshipGrant"
-            android:parentActivityName=".AllModules.MainPageElearning">
-        </activity>
-        <activity android:name=".AllModules.Workshop"
-            android:parentActivityName=".AllModules.MainPageElearning">
-        </activity>
-
-        <activity android:name=".AllModules.ResourceSharingHub"
-            android:parentActivityName=".AllModules.MainPageElearning">
-        </activity>
-
-        <activity android:name=".AllModules.ScholarshipDetails"
-            android:parentActivityName=".AllModules.ScholarshipGrant"
-            android:configChanges="orientation|screenSize">
-        </activity>
-        <activity android:name=".AllModules.webViewPage">
-        </activity>
-        <activity android:name=".AllModules.ResetPassword"
-            android:parentActivityName=".AllModules.Login">
-        </activity>
-        <activity android:name=".AllModules.Register"
-            android:parentActivityName=".AllModules.Login">
-        </activity>
-
-        <activity android:name=".AllModules.MainPageElearning"
-            android:parentActivityName=".AllModules.MainHomePage">
-
-        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
