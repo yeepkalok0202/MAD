@@ -24,6 +24,12 @@
         android:theme="@style/Theme.WIA2007MAD"
         tools:targetApi="31">
         <activity
+            android:name=".AllModules.HealthEducation"
+            android:exported="false" />
+        <activity
+            android:name=".AllModules.webPage"
+            android:exported="false" />
+        <activity
             android:name=".AllModules.HealthHome"
             android:exported="false" />
         <activity
@@ -36,33 +42,33 @@
             </intent-filter>
         </activity>
         <activity android:name=".AllModules.Login" />
-        <activity android:name=".AllModules.MainHomePage"></activity>
+        <activity android:name=".AllModules.MainHomePage" />
         <activity
             android:name=".AllModules.MainPageElearning"
-            android:parentActivityName=".AllModules.MainHomePage"></activity>
+            android:parentActivityName=".AllModules.MainHomePage" />
         <activity
             android:name=".AllModules.ScholarshipGrant"
-            android:parentActivityName=".AllModules.MainPageElearning"></activity>
+            android:parentActivityName=".AllModules.MainPageElearning" />
         <activity
             android:name=".AllModules.Workshop"
-            android:parentActivityName=".AllModules.MainPageElearning"></activity>
+            android:parentActivityName=".AllModules.MainPageElearning" />
         <activity
             android:name=".AllModules.ResourceSharingHub"
-            android:parentActivityName=".AllModules.MainPageElearning"></activity>
+            android:parentActivityName=".AllModules.MainPageElearning" />
         <activity
             android:name=".AllModules.ScholarshipDetails"
             android:configChanges="orientation|screenSize"
-            android:parentActivityName=".AllModules.ScholarshipGrant"></activity>
-        <activity android:name=".AllModules.webViewPage"></activity>
+            android:parentActivityName=".AllModules.ScholarshipGrant" />
+        <activity android:name=".AllModules.webViewPage" />
         <activity
             android:name=".AllModules.ResetPassword"
-            android:parentActivityName=".AllModules.Login"></activity>
+            android:parentActivityName=".AllModules.Login" />
         <activity
             android:name=".AllModules.Register"
-            android:parentActivityName=".AllModules.Login"></activity>
+            android:parentActivityName=".AllModules.Login" />
         <activity
             android:name=".AllModules.MainPageElearning"
-            android:parentActivityName=".AllModules.MainHomePage"></activity>
+            android:parentActivityName=".AllModules.MainHomePage" />
 
         <meta-data
             android:name="preloaded_fonts"
