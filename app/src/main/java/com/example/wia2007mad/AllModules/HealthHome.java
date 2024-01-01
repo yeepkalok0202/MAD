@@ -36,6 +36,20 @@ public class HealthHome extends AppCompatActivity {
             }
         });
 
+//        BtnChat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(HealthHome.this, CommunityChatroom.class));
+//            }
+//        });
+
+        BtnCounselling.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HealthHome.this, CounsellingService.class));
+            }
+        });
+
         BtnEducation.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

@@ -52,9 +52,14 @@ dependencies {
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.github.hakobast:dropdown-textview:0.3.1")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation ("com.makeramen:roundedimageview:2.3.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
     //firebase stuff
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-messaging:23.4.0")
+    implementation ("com.google.firebase:firebase-core:21.1.1")
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
     implementation("com.google.firebase:firebase-auth")
@@ -73,5 +78,6 @@ dependencies {
     implementation("com.google.android.gms:play-services-location:21.0.1")
     implementation("com.google.android.libraries.places:places:3.3.0")
 
-
+    implementation("com.firebaseui:firebase-ui-firestore:8.0.2")
+    implementation("com.google.firebase:firebase-firestore:24.10.0")
 }
