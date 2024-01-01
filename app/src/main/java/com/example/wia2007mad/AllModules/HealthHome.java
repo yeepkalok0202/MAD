@@ -13,7 +13,6 @@ import com.google.android.material.button.MaterialButton;
 
 public class HealthHome extends AppCompatActivity {
 
-    //hello
     MaterialButton BtnChat, BtnCounselling, BtnEducation, BtnEmergency, BtnEducation2;
     private ActivityHealthHomeBinding binding;
 
@@ -41,6 +40,13 @@ public class HealthHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HealthHome.this, HealthEducation.class));
+            }
+        });
+
+        BtnEmergency.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HealthHome.this, EmergencyLocator.class));
             }
         });
 

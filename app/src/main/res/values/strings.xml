@@ -334,5 +334,7 @@ Through this approach, we navigate the challenge without delving into mathematic
 </string>
     <string name="virtualthumbnaillink3">https://i.ytimg.com/vi/zdAJXil-NvA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCFzkrRbA5RtryxQqUmmRXqxH66Nw</string>
     <string name="virtualtitle3">if x+y=8, find the max of x^y</string>
+
+    <string name="google_map_key">AIzaSyD75uNNaoCnlpAaskEv0xnYaO5IQPRirjk</string>
     <!-- resources sharing hub-->
 </resources>

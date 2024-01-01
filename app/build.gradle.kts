@@ -67,5 +67,11 @@ dependencies {
     implementation ("com.google.firebase:firebase-core:21.1.1")
     implementation("com.google.firebase:firebase-appcheck")
 
+    //For emergency locator
+    implementation("com.karumi:dexter:6.2.2")
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.libraries.places:places:3.3.0")
+
 
 }
