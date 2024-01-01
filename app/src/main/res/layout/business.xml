@@ -15,7 +15,7 @@
         android:fontFamily="@font/outfitbold"
         android:text="Business Planning Guidance"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="23sp"
         android:layout_alignParentRight="true" />
 
     <ImageButton

@@ -9,7 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wia2007mad.databinding.BusinessBinding;
+
 import com.example.wia2007mad.R;
+import com.example.wia2007mad.databinding.SuccessBinding;
 
 public class Business extends AppCompatActivity {
 
@@ -17,10 +20,15 @@ public class Business extends AppCompatActivity {
     BusinessAdapter adapter;
     ImageButton btnback;
 
+    private BusinessBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.business);
+
+        binding= BusinessBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         recyclerView = findViewById(R.id.businessrecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -37,12 +45,12 @@ public class Business extends AppCompatActivity {
         adapter = new BusinessAdapter(businessData,this );
         recyclerView.setAdapter(adapter);
 
-        //add button to go back to home page
-        btnback = findViewById(R.id.arrowleftbusiness);
-        btnback.setOnClickListener(new View.OnClickListener() {
+
+        //button from business page to home page
+        binding.arrowleftbusiness.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Business.this, Home.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

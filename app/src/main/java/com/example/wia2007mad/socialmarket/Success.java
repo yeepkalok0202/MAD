@@ -9,9 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.wia2007mad.databinding.HomeBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import com.example.wia2007mad.databinding.SuccessBinding;
 
 import com.example.wia2007mad.R;
 
@@ -22,10 +25,15 @@ public class Success extends AppCompatActivity {
 
     RecyclerView successRecView;
     ImageButton btnback;;
+
+    private SuccessBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.success);
+
+        binding= SuccessBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         successRecView = findViewById(R.id.successrecyclerView);
 
@@ -65,13 +73,11 @@ public class Success extends AppCompatActivity {
                 });
 
 
-
-        //add button to go back to home page
-        btnback = findViewById(R.id.arrowleftsuccess);
-        btnback.setOnClickListener(new View.OnClickListener() {
+        //button from social market page to home page
+        binding.arrowleftsuccess.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Success.this, Home.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 

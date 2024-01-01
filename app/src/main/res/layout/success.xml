@@ -15,7 +15,7 @@
         android:fontFamily="@font/outfitbold"
         android:text="Success stories"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:layout_alignParentRight="true" />
 
     <ImageButton
