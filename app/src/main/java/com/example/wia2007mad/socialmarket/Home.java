@@ -14,7 +14,7 @@ import com.example.wia2007mad.R;
 import com.example.wia2007mad.databinding.HomeBinding;
 
 public class Home extends AppCompatActivity {
-
+    //hello
     ImageButton successarrow, marketarrow;
 
     Button businessreadmore;
