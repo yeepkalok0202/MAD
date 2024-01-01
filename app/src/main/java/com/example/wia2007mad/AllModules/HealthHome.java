@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -101,4 +102,10 @@ public class HealthHome extends AppCompatActivity {
             }
         });
     }
+
+//    public Boolean onOptionsItemSelected(MenuItem item){
+//        switch(item.getItemId()){
+//
+//        }
+//    }
 }
