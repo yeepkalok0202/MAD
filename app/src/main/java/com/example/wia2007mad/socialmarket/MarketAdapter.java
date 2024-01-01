@@ -15,15 +15,65 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wia2007mad.AllModules.webViewPage;
 import com.example.wia2007mad.R;
+import com.example.wia2007mad.databinding.MarketingListBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder> {
+public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.MarketViewHolder> {
+
+    private final List<MarketData>marketDataList;
+    private final MarketingListener marketingListener;
+
+    public MarketAdapter(List<MarketData>marketDataList, MarketingListener marketingListener){
+        this.marketDataList = marketDataList;
+        this.marketingListener = marketingListener;
+    }
+
+    @NonNull
+    @Override
+    public MarketViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        MarketingListBinding marketingListBinding = MarketingListBinding.inflate(
+                LayoutInflater.from(parent.getContext()),
+                parent,
+                false
+        );
+        return new MarketViewHolder(marketingListBinding);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MarketViewHolder holder, int position) {
+        holder.setData(marketDataList.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return marketDataList.size();
+    }
+
+    class MarketViewHolder extends RecyclerView.ViewHolder{
+        MarketingListBinding binding;
+
+        MarketViewHolder(MarketingListBinding marketingListBinding){
+            super(marketingListBinding.getRoot());
+            binding = marketingListBinding;
+        }
+
+        void setData(MarketData marketData){
+            Glide.with(binding.marketingcardviewimage.getContext())
+                    .load(marketData.imageUrl)
+                    .into(binding.marketingcardviewimage);
+            binding.marketingcardviewcourse.setText(marketData.course);
+            binding.marketingcardviewname.setText(marketData.name);
+            binding.marketDesc.setText(marketData.marketDesc);
+            binding.getRoot().setOnClickListener(view -> marketingListener.onItemClicked(marketData));
+        }
+    }
 
     //private LayoutInflater layoutInflater;
     //MarketData[] marketData;
-    private ArrayList<MarketData> marketData = new ArrayList<>();
-    Context context;
+//    private ArrayList<MarketData> marketData = new ArrayList<>();
+//    Context context;
 
     //private List<String> data;
 
@@ -43,76 +93,76 @@ public class MarketAdapter extends RecyclerView.Adapter<MarketAdapter.ViewHolder
 
      */
 
-    public MarketAdapter(Context context) {
-        this.context = context;
-    }
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.marketing_list, parent, false);
-        View view = layoutInflater.inflate(R.layout.marketing_list, parent, false);
-        return new ViewHolder(view);
-    }
-
-    /*
-    @Override
-    public void onBindViewHolder(@NonNull MarketAdapter.ViewHolder holder, int position) {
-        //bind the textView with data received
-        String title = data.get(position);
-        holder.name.setText(title);
-    }*/
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        //MarketData marketDataList = marketData[position];
-
-        holder.name.setText(marketData.get(position).getName());
-        holder.course.setText(marketData.get(position).getCourse());
-        holder.marketDesc.setText(marketData.get(position).getMarketDesc());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, marketData.get(position).getName()+" Selected", Toast.LENGTH_SHORT).show();
-
-                //go to webview page when clicked
-                Intent intent = new Intent(context, webViewPage.class);
-                //retrieve the url link
-                String urlToLoad = marketData.get(position).getUrl();
-                intent.putExtra("url", urlToLoad);
-                context.startActivity(intent);
-            }
-        });
-
-        //code for image
-        Glide.with(context)
-                .load(marketData.get(position).getImageUrl())
-                .into(holder.cardImage);
-    }
-
-    @Override
-    public int getItemCount() {
-        return marketData.size();
-    }
-
-    public void setResources(ArrayList<MarketData> marketData) {
-        this.marketData = marketData;
-        notifyDataSetChanged();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-
-        private TextView name, course, marketDesc;
-        private ImageView cardImage;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.marketingcardviewname);
-            course = itemView.findViewById(R.id.marketingcardviewcourse);
-            marketDesc = itemView.findViewById(R.id.marketDesc);
-            cardImage = itemView.findViewById(R.id.marketingcardviewimage);
-
-
-        }
-    }
+//    public MarketAdapter(Context context) {
+//        this.context = context;
+//    }
+//    @NonNull
+//    @Override
+//    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+//        //View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.marketing_list, parent, false);
+//        View view = layoutInflater.inflate(R.layout.marketing_list, parent, false);
+//        return new ViewHolder(view);
+//    }
+//
+//    /*
+//    @Override
+//    public void onBindViewHolder(@NonNull MarketAdapter.ViewHolder holder, int position) {
+//        //bind the textView with data received
+//        String title = data.get(position);
+//        holder.name.setText(title);
+//    }*/
+//    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+//        //MarketData marketDataList = marketData[position];
+//
+//        holder.name.setText(marketData.get(position).getName());
+//        holder.course.setText(marketData.get(position).getCourse());
+//        holder.marketDesc.setText(marketData.get(position).getMarketDesc());
+//
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(context, marketData.get(position).getName()+" Selected", Toast.LENGTH_SHORT).show();
+//
+//                //go to webview page when clicked
+//                Intent intent = new Intent(context, webViewPage.class);
+//                //retrieve the url link
+//                String urlToLoad = marketData.get(position).getUrl();
+//                intent.putExtra("url", urlToLoad);
+//                context.startActivity(intent);
+//            }
+//        });
+//
+//        //code for image
+//        Glide.with(context)
+//                .load(marketData.get(position).getImageUrl())
+//                .into(holder.cardImage);
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return marketData.size();
+//    }
+//
+//    public void setResources(ArrayList<MarketData> marketData) {
+//        this.marketData = marketData;
+//        notifyDataSetChanged();
+//    }
+//
+//    public class ViewHolder extends RecyclerView.ViewHolder{
+//
+//        private TextView name, course, marketDesc;
+//        private ImageView cardImage;
+//        public ViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//            name = itemView.findViewById(R.id.marketingcardviewname);
+//            course = itemView.findViewById(R.id.marketingcardviewcourse);
+//            marketDesc = itemView.findViewById(R.id.marketDesc);
+//            cardImage = itemView.findViewById(R.id.marketingcardviewimage);
+//
+//
+//        }
+//    }
 
 
 }
