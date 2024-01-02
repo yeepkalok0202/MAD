@@ -131,7 +131,7 @@ public class DisplayPostFragment extends Fragment {
         databaseReference=firebaseDatabase.getReference("Posts");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
-
+            //ffewrg
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
