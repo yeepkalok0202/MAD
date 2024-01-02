@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/darkblue"
-    tools:context=".selectCounsellorActivity">
+    tools:context=".AllModules.selectCounsellorActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id= "@+id/imageBack"

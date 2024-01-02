@@ -82,13 +82,16 @@
         <activity
             android:name=".AllModules.ChatActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"
+            android:parentActivityName=".AllModules.recentConversation"/>
         <activity
             android:name=".AllModules.recentConversation"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AllModules.CounsellingService"/>
         <activity
             android:name=".AllModules.selectCounsellorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AllModules.recentConversation"/>
         <activity
             android:name=".AllModules.chatRoom"
             android:exported="false" />
@@ -107,19 +110,23 @@
         <activity
             android:name=".AllModules.CounsellingService"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents" />
+            android:parentActivityName=".AllModules.HealthHome"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
             android:name=".AllModules.HealthEducation"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents" />
+            android:parentActivityName=".AllModules.HealthHome"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
             android:name=".AllModules.EmergencyLocator"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".AllModules.HealthHome"/>
 
         <activity
             android:name=".AllModules.HealthHome"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents" />
+            android:parentActivityName=".AllModules.MainHomePage"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
