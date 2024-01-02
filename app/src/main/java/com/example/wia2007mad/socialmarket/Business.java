@@ -37,12 +37,10 @@ public class Business extends AppCompatActivity {
         binding= BusinessBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //set layout
-        //binding.businessrecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //but dont need this when xml file already set layout
 
         getBusinessData();
 
+        //searchview
         binding.businesssearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -56,22 +54,7 @@ public class Business extends AppCompatActivity {
             }
         });
 
-        /*
-        recyclerView = findViewById(R.id.businessrecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        BusinessData[] businessData = new BusinessData[]{
-                new BusinessData("test111", "test1", "test1", R.drawable.kunkun),
-                new BusinessData("test222", "test2", "test2", R.drawable.kunkun),
-
-        };
-
-        adapter = new BusinessAdapter(businessData,this );
-        recyclerView.setAdapter(adapter);
-
-
-
-         */
         //button from business page to home page
         binding.arrowleftbusiness.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +65,7 @@ public class Business extends AppCompatActivity {
 
     }
 
+    //database retrieval
     private void getBusinessData() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("business_planning")
@@ -102,9 +86,7 @@ public class Business extends AppCompatActivity {
                             BusinessAdapter businessAdapter = new BusinessAdapter(businessDataList, new BusinessListener() {
                                 @Override
                                 public void onItemClicked(BusinessData businessData) {
-                                    Intent intent = new Intent(getApplicationContext(), webViewPage.class);
-                                    intent.putExtra("url", businessData.url);
-                                    startActivity(intent);
+                                    //old
                                 }
                             });
                             binding.businessrecyclerView.setAdapter(businessAdapter);
@@ -113,6 +95,7 @@ public class Business extends AppCompatActivity {
                 });
     }
 
+    //show list when searching
     private void filterData(String query) {
         List<BusinessData> filteredList = new ArrayList<>();
         for (BusinessData businessData : businessDataList) {
@@ -124,9 +107,7 @@ public class Business extends AppCompatActivity {
         BusinessAdapter businessAdapter = new BusinessAdapter(filteredList, new BusinessListener() {
             @Override
             public void onItemClicked(BusinessData businessData) {
-                Intent intent = new Intent(getApplicationContext(), webViewPage.class);
-                intent.putExtra("url", businessData.url);
-                startActivity(intent);
+                //old
             }
         });
         binding.businessrecyclerView.setAdapter(businessAdapter);

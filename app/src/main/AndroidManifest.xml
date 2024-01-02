@@ -82,6 +82,14 @@
             android:parentActivityName=".socialmarket.Home">
         </activity>
 
+        <activity android:name=".socialmarket.CardDetailsActivity"
+            android:parentActivityName=".socialmarket.Home">
+        </activity>
+
+        <activity android:name=".socialmarket.SuccessDetailsActivity"
+            android:parentActivityName=".socialmarket.Home">
+        </activity>
+
 
 
         <meta-data

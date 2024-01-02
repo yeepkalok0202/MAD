@@ -26,10 +26,6 @@ import java.util.List;
 
 public class Marketing extends AppCompatActivity {
 
-//    RecyclerView recyclerView;
-//    MarketAdapter adapter;
-    //ArrayList<String> items;
-
     List<MarketData> marketresourcelist = new ArrayList<>();
     private MarketingBinding binding;
     ImageButton btnback;
@@ -44,6 +40,7 @@ public class Marketing extends AppCompatActivity {
 
         getMarketData();
 
+        //searchview
         binding.marketsearchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -57,59 +54,6 @@ public class Marketing extends AppCompatActivity {
             }
         });
 
-//        recyclerView = findViewById(R.id.recyclerView);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-
-        /*
-        MarketData[] marketData = new MarketData[]{
-                new MarketData("test1", "test1", "test1", R.drawable.kunkun)};
-
-         */
-
-        /*
-        items = new ArrayList<>();
-        items.add("First");
-         */
-
-        /*
-        adapter = new MarketAdapter(this,items );
-        recyclerView.setAdapter(adapter);
-
-         */
-
-        //adapter = new MarketAdapter(marketData,this );
-        //new
-//        adapter = new MarketAdapter(this);
-//        recyclerView.setAdapter(adapter);
-
-
-        //firebase
-        //marketresourcelist = new ArrayList<>();
-        //firebase code
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//        db.collection("marketing_resource")
-//                .get()
-//                .addOnCompleteListener(task -> {
-//                    if (task.isSuccessful() && task.getResult() != null) {
-//                        for (QueryDocumentSnapshot document : task.getResult()) {
-//
-//                            MarketData marketdata = new MarketData();
-//                            marketdata.name = document.getString("name");
-//                            marketdata.imageUrl = document.getString("image");
-//                            marketdata.course = document.getString("course");
-//                            marketdata.marketDesc = document.getString("market_desc");
-//                            marketdata.url = document.getString("url");
-//                            marketresourcelist.add(marketdata);
-//                        }
-//                        adapter.setResources(marketresourcelist);
-//                    }
-//
-//
-//                });
-
-
         //button from marketing page to home page
         binding.arrowleftmarket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,9 +61,6 @@ public class Marketing extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
-        //searchview
-
 
     }
 
@@ -143,14 +84,19 @@ public class Marketing extends AppCompatActivity {
 
                         if(marketresourcelist.size()>0){
                             MarketAdapter marketAdapter = new MarketAdapter(marketresourcelist, new MarketingListener() {
-                                @Override
+
+
                                 public void onItemClicked(MarketData marketData) {
 
                                     Toast.makeText(getApplicationContext(),  " Selected", Toast.LENGTH_SHORT).show();
+                                    /*old code that links to webpage
                                     Intent intent = new Intent(getApplicationContext(), webViewPage.class);
                                     intent.putExtra("url", marketData.url);
                                     startActivity(intent);
+                                    */
                                 }
+
+
                             });
                             binding.recyclerView.setAdapter(marketAdapter);
                         }
@@ -159,6 +105,7 @@ public class Marketing extends AppCompatActivity {
                 });
     }
 
+    //show list when searching
     private void filterData(String query) {
         List<MarketData> filteredList = new ArrayList<>();
         for (MarketData marketData : marketresourcelist) {
@@ -171,10 +118,7 @@ public class Marketing extends AppCompatActivity {
         MarketAdapter marketAdapter = new MarketAdapter(filteredList, new MarketingListener() {
             @Override
             public void onItemClicked(MarketData marketData) {
-                // Handle item click here
-                Intent intent = new Intent(getApplicationContext(), webViewPage.class);
-                intent.putExtra("url", marketData.url);
-                startActivity(intent);
+                //old
             }
         });
         binding.recyclerView.setAdapter(marketAdapter);

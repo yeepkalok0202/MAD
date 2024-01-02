@@ -37,13 +37,7 @@ public class Success extends AppCompatActivity {
 
         successRecView = findViewById(R.id.successrecyclerView);
 
-        /*
-        ArrayList<SuccessData> successblog = new ArrayList<>();
-        successblog.add(new SuccessData("Here are something you should know regarding how we work",   R.drawable.kunkun));
-         */
-
         SuccessAdapter adapter = new SuccessAdapter(this);
-        //adapter.setBlogs(successblog);
 
         successRecView.setAdapter(adapter);
         successRecView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -63,6 +57,8 @@ public class Success extends AppCompatActivity {
                             successData.imageUrl = document.getString("image");
                             successData.successtext = document.getString("title");
                             successData.url = document.getString("url");
+                            successData.name = document.getString("name");
+                            successData.storyDesc = document.getString("story_desc");
                             successblog.add(successData);
                         }
                         adapter.setBlogs(successblog);

@@ -43,16 +43,18 @@ public class SuccessAdapter extends RecyclerView.Adapter<SuccessAdapter.ViewHold
         //set text
         holder.successTxt.setText(successStories.get(position).getSuccesstext());
         holder.parent.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, successStories.get(position).getSuccesstext() + " Selected", Toast.LENGTH_SHORT).show();
+                //bind data with intent
+                SuccessData successData = successStories.get(position);
+                Intent intent = new Intent(v.getContext(), SuccessDetailsActivity.class);
+                intent.putExtra("name", successData.getName());
+                intent.putExtra("title", successData.getSuccesstext());
+                intent.putExtra("story_desc", successData.getStoryDesc());
+                intent.putExtra("imageUrl", successData.getImageUrl());
+                v.getContext().startActivity(intent);
 
-                //go to webview page when clicked
-                Intent intent = new Intent(context, webViewPage.class);
-                //retrieve the url link
-                String urlToLoad = successStories.get(position).getUrl();
-                intent.putExtra("url", urlToLoad);
-                context.startActivity(intent);
             }
         });
 
@@ -60,7 +62,6 @@ public class SuccessAdapter extends RecyclerView.Adapter<SuccessAdapter.ViewHold
         Glide.with(context)
                 .load(successStories.get(position).getImageUrl())
                 .into(holder.successImage);
-        //holder.successImage.setImageResource(successStories.get(position).getImageUrl());
 
     }
 
