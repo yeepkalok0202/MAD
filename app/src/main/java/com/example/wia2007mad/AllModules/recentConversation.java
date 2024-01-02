@@ -59,7 +59,8 @@ public class recentConversation extends AppCompatActivity implements ConversionL
         binding.fabNewChat.setOnClickListener(view ->
                 startActivity(new Intent(getApplicationContext(), selectCounsellorActivity.class)));
         binding.imageBack.setOnClickListener(view ->
-                startActivity(new Intent(getApplicationContext(), CounsellingService.class)));
+                onBackPressed());
+                //startActivity(new Intent(getApplicationContext(), CounsellingService.class)));
     }
 
     private void showToast(String message){

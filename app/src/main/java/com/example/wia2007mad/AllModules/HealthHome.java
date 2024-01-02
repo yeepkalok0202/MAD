@@ -44,21 +44,21 @@ public class HealthHome extends AppCompatActivity {
 //            }
 //        });
 
-        BtnCounselling.setOnClickListener(new View.OnClickListener(){
+        BtnCounselling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HealthHome.this, CounsellingService.class));
             }
         });
 
-        BtnEducation.setOnClickListener(new View.OnClickListener(){
+        BtnEducation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HealthHome.this, HealthEducation.class));
             }
         });
 
-        BtnEmergency.setOnClickListener(new View.OnClickListener(){
+        BtnEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HealthHome.this, EmergencyLocator.class));
@@ -103,9 +103,14 @@ public class HealthHome extends AppCompatActivity {
         });
     }
 
-//    public Boolean onOptionsItemSelected(MenuItem item){
+
+//    public boolean onOptionsItemSelected(MenuItem item){
 //        switch(item.getItemId()){
-//
+//            case android.R.id.home:
+//                finish();
+//                return true;
+//            default:
+//                return super.onOptionsItemSelected(item);
 //        }
 //    }
 }

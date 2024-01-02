@@ -1,10 +1,5 @@
 package com.example.wia2007mad.AllModules;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -22,6 +17,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.example.wia2007mad.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -55,7 +55,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 
-public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
 
     boolean isPermissionGranted;
     GoogleMap mGoogleMap;
@@ -66,6 +66,7 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
     Spinner SPCategory;
     Button BtnFind;
     SupportMapFragment supportMapFragment;
+
     private int GPS_REQUEST_CODE = 9001;
 
     @Override
@@ -78,9 +79,11 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
         SPCategory = findViewById(R.id.SPCategory);
         BtnFind = findViewById(R.id.BtnFind);
 
-        String[] placeCategory = {"Police", "Hospital", };
+        //"Clinic","Emergency","24 Hours Clinic","First Aid"
+        String[] placeCategory = {"Police", "Hospital","Drugstore","Doctor","Dentist","Bank","light_rail_station","mosque","pharmacy","physiotherapist","train_station"};
+        String[] showingplaceCategory={"Police", "Hospital","Medicine Store","Doctor","Dentist","Bank","LRT","Mosque","Pharmacy","Physiotherapist","Train Station"};
         SPCategory.setAdapter(new ArrayAdapter<>(EmergencyLocator.this,
-                android.R.layout.simple_spinner_dropdown_item, placeCategory));
+                android.R.layout.simple_spinner_dropdown_item, showingplaceCategory));
 
         checkMyPermission();
 
@@ -99,6 +102,7 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
             @Override
             public void onClick(View view) {
                 onBackPressed();
+                //startActivity(new Intent(EmergencyLocator.this, HealthHome.class));
             }
         });
 
@@ -117,7 +121,7 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
                 //More information: https://developers.google.com/maps/documentation/places/web-service/search-nearby
                 String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
                         + "?location=" + currentLat + "," + currentLong
-                        + "&radius=5000"
+                        + "&radius=25000"
                         + "&type=" + placeCategory[SPLoc].toLowerCase()
                         + "&key=" + getResources().getString(R.string.google_map_key);
                 //Log.i("log", url);
@@ -127,6 +131,7 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
         });
     }
 
+
     private void initMap() {
         if(isPermissionGranted){
             if(isGPSenable()) {
@@ -135,7 +140,6 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
             }
         }
     }
-
 
     private boolean isGPSenable(){
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -227,6 +231,8 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
             }
         }).check();
     }
+
+
 
     @SuppressLint("MissingPermission")
     @Override
@@ -336,4 +342,6 @@ public class EmergencyLocator extends AppCompatActivity implements OnMapReadyCal
             }
         }
     }
+
+
 }
